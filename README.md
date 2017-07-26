@@ -6,7 +6,6 @@ Plugins
 ----------
 * mongo_ops   : operations/second
 * mongo_mem   : mapped, virtual and resident memory usage
-* mongo_btree : btree access/misses/etc...
 * mongo_conn  : current connections
 * mongo_lock  : write lock info
 * mongo_docs  : number of documents (inserted, updated...)
@@ -27,9 +26,8 @@ Installation (ubuntu)
 
 **Install plugins**
 
-    git clone https://github.com/comerford/mongo-munin.git /tmp/mongo-munin
+    git clone https://github.com/mohsenasm/mongo-munin.git /tmp/mongo-munin
     sudo cp /tmp/mongo-munin/mongo_* /usr/share/munin/plugins
-    sudo ln -sf /usr/share/munin/plugins/mongo_btree /etc/munin/plugins/mongo_btree
     sudo ln -sf /usr/share/munin/plugins/mongo_conn /etc/munin/plugins/mongo_conn
     sudo ln -sf /usr/share/munin/plugins/mongo_lock /etc/munin/plugins/mongo_lock
     sudo ln -sf /usr/share/munin/plugins/mongo_mem /etc/munin/plugins/mongo_mem
@@ -57,4 +55,3 @@ munin-node can set env value in below file:
 
     [mongo_*]
     env.MONGO_DB_URI mongodb://user:password@host:port/dbname
-
